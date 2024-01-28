@@ -63,16 +63,19 @@ def register(request):
         return render(request, 'customer\Register.html')
 
 
-# def adduser(request):
-#     if request.method=="POST":
-#         Firstname=request.POST.get('firstName')
-#         Lastname=request.POST.get('secondName')
-#         phoneno=request.POST.get('phoneNo')
-#         Email=request.POST.get('email')
-#         Gender=request.POST.get('Gender')
+def adduser(request):
+    if request.method=="POST":
+        Firstname=request.POST.get('firstName')
+        Lastname=request.POST.get('secondName')
+        phoneno=request.POST.get('phoneNo')
+        Email=request.POST.get('email')
+        Gender=request.POST.get('Gender')
         
-#         newuser=userDetails(firstname=Firstname,lastname=Lastname,phone_number=phoneno,mail=Email,gender=Gender)
-#         newuser.save()
-#         return redirect('adduser')
+        newuser=userDetails(firstname=Firstname,lastname=Lastname,phone_number=phoneno,mail=Email,gender=Gender)
+        newuser.save()
+        return redirect('adduser')
+       
+    newuser=userDetails.objects.all()
+    return render(request,'customer\\UserData.html',{'UserData':UserData})
         
 
