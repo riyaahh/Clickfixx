@@ -63,6 +63,9 @@ def register(request):
         return render(request, 'customer\Register.html')
 
 
+
+
+
 def adduser(request):
     if request.method=="POST":
         Firstname=request.POST.get('firstName')
@@ -77,5 +80,6 @@ def adduser(request):
        
     newuser=userDetails.objects.all()
     return render(request,'customer\\UserData.html',{'UserData':UserData})
+
         
 
