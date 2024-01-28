@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 # from provider.models import 
-
+from .models import provider
 
 def prof(request):
     return render(request,"provider/prof.html",context={})
@@ -10,14 +10,17 @@ def profform(request):
 def history(request):
     return render (request,"provider/history.html",context={})
     
-# def appointments(request):
-#     if request.method=="POST":
-#         appid=request.POST.get('firstName')
-#         Lastn=request.POST.get('secondName')
-#         phoneno=request.POST.get('phoneNo')
-#         Email=request.POST.get('email')
-#         Gender=request.POST.get('Gender')
+def addproviders(request):
+    if request.method=="POST":
+        pname=request.POST.get('name')
+        email=request.POST.get('email')
+        service=request.POST.get('service')
+        experience=request.POST.get('experience')
+        phoneno=request.POST.get('phone')
+        education=request.POST.get('education')
+        dob=request.POST.get('dob')
+        image=request.POST.get('image')
         
-#         newuser=userDetails(firstname=Firstname,lastname=Lastname,phone_number=phoneno,mail=Email,gender=Gender)
-#         newuser.save()
-#         return redirect('adduser')
+        newprovider=provider(pname=pname,pcontactno=phoneno,pemail=email,pservicetype=service,exp=experience,pDOB=dob,peducation=education,pimage=image)
+        newprovider.save()
+        return redirect('addprovider')
