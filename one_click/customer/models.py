@@ -13,7 +13,7 @@ class userDetails(models.Model):
 
 
     def __str__(self):
-        return str(self.userid.__str__())
+        return str(self.firstname.__str__())
     
 # class login(models.Model):
 #     username = models.CharField(max_length=50,unique=True)

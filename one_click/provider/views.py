@@ -10,14 +10,14 @@ def profform(request):
 def history(request):
     return render (request,"provider/history.html",context={})
     
-def appointments(request):
-    if request.method=="POST":
-        appid=request.POST.get('firstName')
-        Lastn=request.POST.get('secondName')
-        phoneno=request.POST.get('phoneNo')
-        Email=request.POST.get('email')
-        Gender=request.POST.get('Gender')
+# def appointments(request):
+#     if request.method=="POST":
+#         appid=request.POST.get('firstName')
+#         Lastn=request.POST.get('secondName')
+#         phoneno=request.POST.get('phoneNo')
+#         Email=request.POST.get('email')
+#         Gender=request.POST.get('Gender')
         
-        newuser=userDetails(firstname=Firstname,lastname=Lastname,phone_number=phoneno,mail=Email,gender=Gender)
-        newuser.save()
-        return redirect('adduser')
+#         newuser=userDetails(firstname=Firstname,lastname=Lastname,phone_number=phoneno,mail=Email,gender=Gender)
+#         newuser.save()
+#         return redirect('adduser')
