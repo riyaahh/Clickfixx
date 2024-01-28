@@ -1,0 +1,291 @@
+{% extends "base.html" %} 
+{% load static %}
+
+
+{% block content %}
+
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  <!-- font awesome style -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  <link href="{% static 'js/custom.js' %}" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'owlcarousel/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'owlcarousel/owl.theme.default.min.css' %}">
+
+
+  <!-- <div class="hero_area">
+    
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_nav">
+            <a href="mailto:riyapc33@gmail.com">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Call : +01 8590791082
+              </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                Email : riyapc33@gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="index.html">
+              <span>
+                CLICK-FIX
+              </span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about"> About</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="service">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    
+  </div> -->
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="container ">
+      <div class="heading_container heading_center">
+        <h2> Our Services </h2>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-4 mx-auto">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/s1.png' %}" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Maintenance
+              </h5>
+              <p>
+                Our service providers are your partners in maintaining the essence of home. From skilled technicians to reliable artisans, our professionals ensure the ongoing care of your living space. Whether it's routine repairs, appliance maintenance, or specialized projects, our experts are equipped to handle it all. 
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 mx-auto">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/s2.png' %}" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Electrical
+              </h5>
+              <p>
+                Our service providers are your partners in maintaining the essence of home. From skilled technicians to reliable artisans, our professionals ensure the ongoing care of your living space. Whether it's routine repairs, appliance maintenance, or specialized projects, our experts are equipped to handle it all. 
+
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 mx-auto">
+          <div class="box ">
+            <div class="img-box">
+              <img src="{% static 'images/s3.png' %}" alt="" />
+            </div>
+            <div class="detail-box">
+              <h5>
+                Plumbing
+              </h5>
+              <p>
+                Our plumbing service providers are your allies in preserving the flow of your home. Our certified experts specialize in the ongoing maintenance of plumbing systems, addressing issues before they become problems. From routine checks to urgent repairs, our professionals ensure your home's water works seamlessly. 
+
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      <p class="d-inline-flex gap-1">
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="align-items: center;">
+          READ MORE
+        </button>
+      </p>
+    
+      <div class="collapse" id="collapseExample">
+
+        <div class="row">
+          <div class="col-sm-6 col-md-4 mx-auto">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/pest.png' %}" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Pest Control
+                </h5>
+                <p>
+                  Let CLICK-FIX be your ultimate solution for hassle-free pest control.
+                   Our dedicated team of experts specializes in comprehensive pest management, ensuring your home remains a sanctuary.
+                    From eradicating common nuisances to addressing specialized pest issues, we provide targeted and effective solutions. With CLICK-FIX enjoy the convenience of scheduling pest control services at your fingertips. Our certified professionals use advanced techniques and eco-friendly methods to safeguard your home. 
+                  Say goodbye to unwanted guests and hello to a pest-free living space.  
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 mx-auto">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{% static 'images/laundry.jpg' %}" alt="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Plumbing
+                </h5>
+                <p>
+                  Our service providers are your partners in maintaining the essence of home. From skilled technicians to reliable artisans, our professionals ensure the ongoing care of your living space. Whether it's routine repairs, appliance maintenance, or specialized projects, our experts are equipped to handle it all. 
+  
+                </p>
+              </div>
+            </div>
+          </div>
+             
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  <!-- info section -->
+  <section class="info_section ">
+    <div class="container">
+      <h4>
+        Get In Touch
+      </h4>
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="info_items">
+            <div class="row">
+              <div class="col-md-4">
+                <a href="">
+                  <div class="item ">
+                    <div class="img-box ">
+                      <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      LAVASA,PUNE
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="">
+                  <div class="item ">
+                    <div class="img-box ">
+                      <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      +91 8590791082
+                    </p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a href="">
+                  <div class="item ">
+                    <div class="img-box">
+                      <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                    <p>
+                      riyapc33@gmail.com
+                    </p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="social-box">
+      <h4>
+        Follow Us
+      </h4>
+      <div class="box">
+        <a href="">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-youtube" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayDateYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  {% endblock content %}
+
+  {% block extrafooter %}
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' %}">
+  </script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+   <script src="{% static 'https://maps.app.goo.gl/mmSZJ5sT8rZf9xzz5' %}"></script> 
+  <!-- End Google Map -->
+
+   {% endblock extrafooter %}

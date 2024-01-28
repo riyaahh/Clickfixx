@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+	<!-- slider stylesheet -->
+<link rel="stylesheet" type="text/css"
+href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+<!-- font awesome style -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+
+
+
+<!-- Custom styles for this template -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" />
+<!-- responsive style -->
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+<!-- <link href="{% static 'css/register.css' %}" rel="stylesheet" /> -->
+<link href="{% static 'js/custom.js' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'owlcarousel/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'owlcarousel/owl.theme.default.min.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Fasthand&family=Playfair+Display:ital,wght@0,700;1,500&display=swap"
+rel="stylesheet">
+
+{% endblock styles %}
+
+{% block content %}
+<div class="card-group">
+  <div class="card" style="margin-right:10px; color: rgb(30, 11, 104); background-color: rgb(236, 225, 188);">
+    <img src="{% static 'images/maintainance.avif' %}" class="card-img-top" alt="card-group-image" style="height: 5cm;">
+    <div class="card-body">
+      <h5 class="card-title">MAINTAINANCE</h5>
+      <p class="card-text">"Elevate your home's well-being with CLICK-FIX Maintenance. Our expert plumbers ensure
+        optimal system performance through routine inspections, preventative measures, and timely repairs. Trust us for
+        transparent pricing, skilled professionals, and a proactive approach to keep your plumbing in peak condition.
+        Download CLICK-FIX for worry-free plumbing maintenance."</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card" style="margin-right:10px; color: rgb(30, 11, 104); background-color: rgb(236, 225, 188);">
+    <img src="{% static 'images/lau.jpeg' %}" class="card-img-top" alt="card-group-image" style="height: 5cm;">
+    <div class="card-body">
+      <h5 class="card-title">LAUNDRY</h5>
+      <p class="card-text">"Experience seamless laundry care with CLICK-FIX Laundry. Our skilled professionals provide
+        comprehensive services, including machine repairs, maintenance, and installations. Enjoy transparent pricing,
+        expert technicians, and efficient solutions for a hassle-free laundry experience. Download CLICK-FIX for
+        reliable, convenient, and top-notch laundry solutions at your fingertips.".</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+  <div class="card" style="margin-right:10px; color: rgb(30, 11, 104); background-color: rgb(236, 225, 188);">
+    <img src="{% static 'images/plum.jpg' %}" class="card-img-top" alt="card-group-image" style="height: 5cm" ;>
+    <div class="card-body">
+      <h5 class="card-title">PLUMBING</h5>
+      <p class="card-text">"Introducing CLICK-FIX, your go-to plumbing app for seamless home services. Our experienced
+        team offers emergency repairs, routine maintenance, pipe installations, water heater services, and more.
+        Transparent pricing, skilled plumbers, and prompt service make us your trusted partner. Download CLICK-FIX for
+        reliable, efficient, and hassle-free plumbing solutions at your fingertips.".</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+
+  <div class="card" style="margin-right:10px; color: rgb(30, 11, 104); background-color: rgb(236, 225, 188);">
+    <img src="{% static 'images/elect - Copy.webp' %}" class="card-img-top" alt="card-group-image" style="height: 5cm;">
+    <div class="card-body">
+      <h5 class="card-title">ELECTRICAL</h5>
+      <p class="card-text">"Empower your home with CLICK-FIX Electrical. Our skilled electricians offer a spectrum of
+        services, from installations to repairs and routine maintenance. Trust us for transparent pricing, expert
+        solutions, and a commitment to keeping your home powered safely. Download CLICK-FIX for dependable electrical
+        services, ensuring your home stays connected and secure.".</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-outline-primary"><a href="bookform">BOOK NOW</a></button>
+{% endblock content %}
+
+{% block extrafooter %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+{% endblock extrafooter %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-sm">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="image">
+                        <img src= "maintainance.avif ">
+                    </div>
+                    <h4 style="font-weight: bolder;">MAINTAINANCE</h4>
+    
+                </div>
+    
+    
+                <div class="col-sm-6">
+                    <div class="btn-box">
+                        <a href="">
+                            BOOK NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div class="container-sm">
+            <div class="row">
+                <div class="col-sm-6">
+                    
+                        <img src="elect - Copy.webp">
+                    
+                    <h4 style="font-weight: bolder;">ELECTRICAL</h4>
+    
+                </div>
+    
+    
+                <div class="col-sm-6">
+                    <div class="btn-box">
+                        <a href="">
+                            BOOK NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container-sm">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="image">
+                        <img src="{% static 'images/lau.jpeg' %}">
+                    </div>
+                    <h4 style="font-weight: bolder;">LAUNDRY</h4>
+    
+                </div>
+    
+    
+                <div class="col-sm-6">
+                    <div class="btn-box">
+                        <a href="">
+                            BOOK NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-sm">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="image">
+                        <img src="{% static 'images/PE.jpeg' %}">
+                    </div>
+                    <h4 style="font-weight: bolder;">PEST CONTROL</h4>
+    
+                </div>
+    
+    
+                <div class="col-sm-6">
+                    <div class="btn-box">
+                        <a href="">
+                            BOOK NOW
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> -->

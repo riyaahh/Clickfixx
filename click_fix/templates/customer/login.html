@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+
+<link rel="stylesheet" type="text/css"
+  href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+<!-- font awesome style -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+
+<!-- Custom styles for this template -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" />
+<!-- responsive style -->
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+<link href="{% static 'js/custom.js' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'owlcarousel/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'owlcarousel/owl.theme.default.min.css' %}">
+{% endblock styles %}
+
+
+{% block content %}
+
+<div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+    <div class="card card0 border-0">
+        <div class="row d-flex">
+            <div class="col-lg-6">
+                <div class="card1 pb-5">
+                    <!-- <div class="row">
+                      <img src="https://i.imgur.com/CXQmsmF.png" class="logo">
+                  </div> -->
+                    <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+                        <img src="{% static 'images/ICON2.png' %}" class="image" style="height: 8cm; width:10cm">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="card2 card border-0 px-4 py-5">
+                       
+                  <div class="line">{{msg}}</div>
+                        <div class="row px-3">
+                            <label class="mb-1">
+                                <h6 class="mb-0 text-sm">Email Address</h6>
+                            </label>
+                            <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address">
+                        </div>
+                        <div class="row px-3">
+                            <label class="mb-1">
+                                <h6 class="mb-0 text-sm">Password</h6>
+                            </label>
+                            <input type="password" name="password" placeholder="Enter password">
+                        </div>
+                        <div class="row px-3 mb-4">
+                           
+                            <a href="#" class="ml-auto mb-0 text-sm">Forgot Password?</a>
+                        </div>
+                        <div class="row mb-3 px-3">
+                            <input type="submit" class="btn btn-primary" value="Login" href="{% url 'user' %}">
+                        </div>
+                        <div class="row mb-4 px-3">
+
+                            <small class="font-weight-bold">Don't have an account? <a class="text-danger"
+                                    href="{% url 'register' %}">Register</a></small>
+
+
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+       
+    </div>
+</div>
+{% endblock content %}

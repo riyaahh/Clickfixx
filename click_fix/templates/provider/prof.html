@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+<!-- slider stylesheet -->
+<link rel="stylesheet" type="text/css"
+  href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+<!-- font awesome style -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+
+
+
+<!-- Custom styles for this template -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" />
+<!-- responsive style -->
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+<!-- <link href="{% static 'css/register.css' %}" rel="stylesheet" /> -->
+<link href="{% static 'js/custom.js' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'owlcarousel/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'owlcarousel/owl.theme.default.min.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Fasthand&family=Playfair+Display:ital,wght@0,700;1,500&display=swap"
+  rel="stylesheet">
+
+{% endblock styles %}
+{% block content %}
+
+<section class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4 mb-sm-5">
+                <div class="card card-style1 border-0">
+                    <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="...">
+                            </div>
+                            <div class="col-lg-6 px-xl-10">
+                                <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+                                    <h3 class="h2 text-white mb-0">Tom Cruise</h3>
+                                    <span class="text-primary">Provider</span>
+                                </div>
+                                <ul class="list-unstyled mb-1-9">
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Position:</span> plumber</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Experience:</span> 10 Years</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email:</span> tom@mail.com</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Website:</span> www.example.com</li>
+                                    <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone:</span> 9074569684</li>
+
+                                </ul>
+                                <a href="{% url 'profform' %}" > UPDATE YOUR PROFILE</a>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mb-4 mb-sm-5">
+                <div>
+                    <span class="section-title text-primary mb-3 mb-sm-4">About Me</span>
+                    <p>Welcome to our Home Services App, your go-to solution for simplifying and streamlining your everyday tasks and chores. Life can be hectic, and our goal is to make things easier for you by connecting you with trusted professionals who can take care of various home-related services. 
+                        Whether you need a plumber, electrician, cleaner, or any other service provider, 
+                        our app is designed to bring convenience to your fingertips.</p>
+                    <p class="mb-0">Namaste</p>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12 mb-4 mb-sm-5">
+                        <div class="mb-4 mb-sm-5">
+                            <span class="section-title text-primary mb-3 mb-sm-4">Skill</span>
+                            <div class="progress-text">
+                                <div class="row">
+                                    <div class="col-6">Driving range</div>
+                                    <div class="col-6 text-end">80%</div>
+                                </div>
+                            </div>
+                            <div class="custom-progress progress progress-medium mb-3" style="height: 4px;">
+                                <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:80%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10" role="progressbar"></div>
+                            </div>
+                            <div class="progress-text">
+                                <div class="row">
+                                    <div class="col-6">Short Game</div>
+                                    <div class="col-6 text-end">90%</div>
+                                </div>
+                            </div>
+                            <div class="custom-progress progress progress-medium mb-3" style="height: 4px;">
+                                <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
+                            </div>
+                            <div class="progress-text">
+                                <div class="row">
+                                    <div class="col-6">Side Bets</div>
+                                    <div class="col-6 text-end">50%</div>
+                                </div>
+                            </div>
+                            <div class="custom-progress progress progress-medium mb-3" style="height: 4px;">
+                                <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
+                            </div>
+                            <div class="progress-text">
+                                <div class="row">
+                                    <div class="col-6">Putting</div>
+                                    <div class="col-6 text-end">60%</div>
+                                </div>
+                            </div>
+                            <div class="custom-progress progress progress-medium" style="height: 4px;">
+                                <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="section-title text-primary mb-3 mb-sm-4">Education</span>
+                            <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
+                            <p class="mb-1-9">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+              
+                        </div>
+                        <div>
+                            <a href="{% url 'history' %}"> click to see available apointments</a>
+                            <!-- <button type="button" class="btn btn-secondary btn-lg" href="{% url 'history' %}">See service availability</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
