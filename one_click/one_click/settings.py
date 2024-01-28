@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'CLICK_FIX.urls'
+ROOT_URLCONF = 'one_click.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CLICK_FIX.wsgi.application'
+WSGI_APPLICATION = 'one_click.wsgi.application'
 
 
 # Database

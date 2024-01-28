@@ -1,5 +1,5 @@
 """
-ASGI config for click_fix project.
+ASGI config for one_click project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'click_fix.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'one_click.settings')
 
 application = get_asgi_application()
