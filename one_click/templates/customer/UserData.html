@@ -52,9 +52,9 @@ rel="stylesheet">
                                     <span class="text-primary">Customer</span>
                                 </div>
                                 <ul class="list-unstyled mb-1-9">
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">First Name:</span> {{user.firstname}}</li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Second Name:</span> {{user.secondname}}</li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Gender:</span>{{user.gender}}</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">First Name:</span> {{request.user.first_name}}</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Second Name:</span> {{request.user.last_name}}</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Gender:</span>{{request.user.userdetails.gender}}</li>
                                     <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email ID:</span>{{request.user.email}}</li>
                                     <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone No:</span> {{request.user.userdetails.phone_number}}</li>
                                 </ul>
