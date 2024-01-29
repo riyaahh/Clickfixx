@@ -55,9 +55,10 @@ def register(request):
         gender = request.POST['Gender'].strip()
         password = request.POST['password'].strip()
         phonenumber=request.POST['phoneNo'].strip()
+        
 
         new_user=User.objects.create_user(first_name=firstname,last_name=lastname,email=email,username=email,password=password,is_active=True)
-        userDetails.objects.create(user=new_user,phone_number=phonenumber,gender=gender)
+        userDetails.objects.create(user=new_user,phone_number=phonenumber,gender=gender,)
         return redirect('login')
     else:
         return render(request, 'customer\Register.html')
@@ -73,8 +74,9 @@ def adduser(request):
         phoneno=request.POST.get('phoneNo')
         Email=request.POST.get('email')
         Gender=request.POST.get('Gender')
+        image=request.FILES.get('image')
         
-        newuser=userDetails(firstname=Firstname,lastname=Lastname,phone_number=phoneno,mail=Email,gender=Gender)
+        newuser=userDetails(firstname=Firstname,lastname=Lastname,phone_number=phoneno,mail=Email,gender=Gender,images=image)
         newuser.save()
         return redirect('adduser')
        
