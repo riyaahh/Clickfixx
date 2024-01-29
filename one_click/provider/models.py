@@ -1,7 +1,8 @@
 from django.db import models
+import uuid
 
 class service(models.Model):
-    sid=models.IntegerField(primary_key=True)
+    sid=models.UUIDField(primary_key=True,default=uuid.uuid4,editable=False)
     stype=models.CharField(max_length=20)
     sprice=models.FloatField()
 

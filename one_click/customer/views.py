@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, HttpResponse
 from django.http import HttpResponse
 
 from django.contrib.auth import authenticate,login
@@ -28,11 +28,11 @@ def signin(request):
             if user.is_superuser:
                 login(request,user)
                 request.session['admin_id']=user.id
-                return redirect("user")
+                return redirect("Admin User")
             elif user.is_staff:
                 login(request,user)
                 request.session['admin_id']=user.id
-                return redirect("index")
+                return redirect("prof")
             else:
                 login(request,user)
                 request.session['admin_id']=user.id
@@ -55,10 +55,12 @@ def register(request):
         gender = request.POST['Gender'].strip()
         password = request.POST['password'].strip()
         phonenumber=request.POST['phoneNo'].strip()
-        
-
+        image=request.FILES.get('image')
+      
         new_user=User.objects.create_user(first_name=firstname,last_name=lastname,email=email,username=email,password=password,is_active=True)
-        userDetails.objects.create(user=new_user,phone_number=phonenumber,gender=gender,)
+        new_user.save()
+        ud = userDetails.objects.create(user=new_user,phone_number=phonenumber,gender=gender,images=image)
+        ud.save()
         return redirect('login')
     else:
         return render(request, 'customer\Register.html')
@@ -67,21 +69,8 @@ def register(request):
 
 
 
-def adduser(request):
-    if request.method=="POST":
-        Firstname=request.POST.get('firstName')
-        Lastname=request.POST.get('secondName')
-        phoneno=request.POST.get('phoneNo')
-        Email=request.POST.get('email')
-        Gender=request.POST.get('Gender')
-        image=request.FILES.get('image')
-        
-        newuser=userDetails(firstname=Firstname,lastname=Lastname,phone_number=phoneno,mail=Email,gender=Gender,images=image)
-        newuser.save()
-        return redirect('adduser')
-       
-    newuser=userDetails.objects.all()
-    return render(request,'customer\\UserData.html',{'UserData':UserData})
+def adduser(request):       
+    return render(request,'customer\\UserData.html')
 
         
 
