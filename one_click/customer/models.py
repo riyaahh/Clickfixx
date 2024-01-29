@@ -8,6 +8,7 @@ class userDetails(models.Model):
     gender = models.CharField(max_length=10, choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')],default='DefaultGender')
     mail=models.CharField(max_length=30,default='DefaultMail')
     lastname=models.CharField(max_length=30,default='DefaultLastName')
+    images=models.ImageField(upload_to='ProfileImages/')
     # userid=models.CharField(primary_key=True, max_length=30)
 
 
