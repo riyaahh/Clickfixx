@@ -72,5 +72,14 @@ def register(request):
 def adduser(request):       
     return render(request,'customer\\UserData.html')
 
+def addappointments(request):
+    name=request.POST['name'].strip()
+    location=request.POST['location'].strip()
+    service=request.POST['service'].strip()
+    date=request.POST['date'].strip()
+    time=request.POST['time'].strip()
+    newapp=User.objects.create_user()
+
+
         
 

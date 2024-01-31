@@ -16,6 +16,17 @@ class userDetails(models.Model):
     def __str__(self):
         return str(self.firstname.__str__())
     
+class appointmentdetails(models.Model):
+    name=models.CharField(max_length=20)
+    location=models.CharField(max_length=45)
+    service=models.CharField(max_length=20)
+    date=models.DateField(auto_now_add=True)
+    time=models.TimeField()
+    
+
+    def __str__(self):
+      return str(self.name.__str__())
+
 # class login(models.Model):
 #     username = models.CharField(max_length=50,unique=True)
 #     password = models.CharField(max_length=50)

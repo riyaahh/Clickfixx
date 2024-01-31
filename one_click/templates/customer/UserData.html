@@ -51,24 +51,7 @@
                                     <h3 class="h2 text-white mb-0">{{request.user.first_name}} {{request.user.last_name}}</h3>
                                     <span class="text-primary">Customer</span>
 
-    <section class="bg-light">
-        {% csrf_token %}
-        
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 mb-4 mb-sm-5">
-                    <div class="card card-style1 border-0">
-                        <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
-                            <div class="row align-items-center">
-                                <div class="col-lg-6 mb-4 mb-lg-0">
-
-                                    <img src= "{{userdetails.image.url}}" alt=" ">
-                                </div>
-                                
-                                <div class="col-lg-6 px-xl-10">
-                                    <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
-                                        <h3 class="h2 text-white mb-0">{{request.user.first_name}} {{request.user.last_name}}</h3>
-                                        <span class="text-primary">Customer</span>
+    <!--  -->
                                     </div>
                                     <ul class="list-unstyled mb-1-9">
                                         <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">First Name:</span> {{request.user.first_name}}</li>
@@ -152,53 +135,10 @@
                                     <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
                                 </div>
                             </div>
-                            <div>
-                                <a href="bookings.html"> click</a>
-                                <!-- <button type="button" class="btn btn-secondary btn-lg" href="{% url 'bookings' %}">BOOK YOUR SERVICE</button> -->
-                            </div>
-
-                            <div class="progress-text">
-                                <div class="row">
-                                    <div class="col-6">ELECTRICAL</div>
-                                    <div class="col-6 text-end">90%</div>
-                                </div>
-                            </div>
-                            <div class="custom-progress progress progress-medium mb-3" style="height: 4px;">
-                                <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
-                            </div>
-                            <div class="progress-text">
-                                <div class="row">
-                                    <div class="col-6">PEST CONTROL</div>
-                                    <div class="col-6 text-end">50%</div>
-                                </div>
-                            </div>
                             
-                            <div class="custom-progress progress progress-medium mb-3" style="height: 4px;">
-                                <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
-                            </div>
-                            <div class="progress-text">
-                                <div class="row">
-                                    <div class="col-6">LAUNDRY</div>
-                                    <div class="col-6 text-end">50%</div>
-                                </div>
-                            </div>
-                            
-                            <div class="custom-progress progress progress-medium mb-3" style="height: 4px;">
-                                <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
-                            </div>
-                            <div class="progress-text">
-                                <div class="row">
-                                    <div class="col-6">MAINTAINANCE</div>
-                                    <div class="col-6 text-end">60%</div>
-                                </div>
-                            </div>
-                            <div class="custom-progress progress progress-medium" style="height: 4px;">
-                                <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
-                            </div>
-                        </div>
                         <div>
-                            <a href="bookings"> click</a>
-                            <!-- <button type="button" class="btn btn-secondary btn-lg" href="{% url 'bookings' %}">BOOK YOUR SERVICE</button> -->
+                            
+                            <a href="bookings"> <input class="btn btn-primary" type="submit" value="Submit"></a>
 
                         </div>
                     </div>
