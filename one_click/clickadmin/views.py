@@ -15,6 +15,21 @@ def contact(request):
 def service(request):
     return render(request,"clickadmin/service.html",context={})
 
+def chart(request):
+    return render(request,"clickadmin/chart.html",context={})
+def form(request):
+    return render(request,"clickadmin/form.html",context={})
+def indexadm(request):
+    return render(request,"clickadmin/indexadm.html",context={})
+def table(request):
+    return render(request,"clickadmin/table.html",context={})
+def widget(request):
+    return render(request,"clickadmin/widget.html",context={})
+def signin(request):
+    return render(request,"clickadmin/signin.html",context={})
+def signup(request):
+    return render(request,"clickadmin/signup.html",context={})
+
 # def register(request):
 #     return render(request,"customer\\register.html",context={})
 

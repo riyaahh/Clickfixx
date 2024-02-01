@@ -30,5 +30,12 @@ urlpatterns = [
 
     # path('register' , views.register, name='register'),
     # path('user',views.user,name="user")
+    path('chart/',views.chart , name="chart"),
+    path('form/',views.form , name= "form"),
+    path('indexadm/',views.indexadm , name= "inedxadm"),
+    path('atble/',views.table , name= "table"),
+    path('widget/',views.widget , name= "widget"),
+    path('signin/',views.signin , name= "signin"),
+    path('signup/',views.signup , name= "signup"),
 ]
 
