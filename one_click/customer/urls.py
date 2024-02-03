@@ -9,5 +9,6 @@ urlpatterns = [
     # path('adduser',views.adduser,name="adduser"),
     path('bookings',views.bookings,name="bookings"),
     path('bookform',views.bookform,name="bookform"),
-    path('adduser',views.adduser,name="adduser")
+    path('adduser',views.adduser,name="adduser"),
+    # path('addappointments',views.addappointments,name="addappointments"),
 ]

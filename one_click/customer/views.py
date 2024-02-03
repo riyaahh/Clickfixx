@@ -3,15 +3,30 @@ from django.http import HttpResponse
 
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.models import User
-from .models import userDetails
+from .models import userDetails ,appointmentdetails
 
 
 def UserData(request):
     return render(request,"customer/UserData.html",context={})
 def bookings(request):
-    return render(request,"customer/bookings.html",context={})
+    return render(request,"customer/bookings.html")
 def bookform(request):
-    return render(request,"customer/bookform.html",context={})
+    if request.method=="POST":
+        name=request.POST['name'].strip()
+        location=request.POST['location'].strip()
+        service=request.POST['service'].strip()
+        date=request.POST.get('date')
+        time=request.POST['time'].strip()
+        workers=request.POST['id'].strip()
+        contact=request.POST.get('no')
+        newapp=appointmentdetails(name=name,location=location,service=service,date=date,time=time,workers=workers,phoneno=contact,user_id=request.user)
+        newapp.save()
+        
+        return redirect('history')
+    
+    return render(request,"customer/bookform.html")
+
+
 
 
 # def login(request):
@@ -42,6 +57,26 @@ def signin(request):
             return render(request,'customer\login.html',{'msg':msg})
     else:
             return render(request,'customer\login.html')
+    
+
+
+    # if user.is_superuser==True:
+    #             login(request,user)
+    #             request.session['admin_id']=user.id
+    #             return redirect("Admin User")
+    #         elif user.is_staff ==True and user.is_superuser==False: 
+    #             login(request,user)
+    #             request.session['admin_id']=user.id
+    #             return redirect("prof")
+    #         elif user.is_superuser==False and user.is_staff==False and user.is_active==True :
+    #             login(request,user)
+    #             request.session['admin_id']=user.id
+    #             return redirect("user")
+    #     else:
+    #         msg='invalid details'
+    #         return render(request,'customer\login.html',{'msg':msg})
+    # else:
+    #         return render(request,'customer\login.html')
         
 
 
@@ -66,19 +101,16 @@ def register(request):
         return render(request, 'customer\Register.html')
 
 
-
+ 
 
 
 def adduser(request):       
     return render(request,'customer\\UserData.html')
 
-def addappointments(request):
-    name=request.POST['name'].strip()
-    location=request.POST['location'].strip()
-    service=request.POST['service'].strip()
-    date=request.POST['date'].strip()
-    time=request.POST['time'].strip()
-    newapp=User.objects.create_user()
+# def addappointments(request):
+#     newapp=appointmentdetails.objects.all()
+#     print(newapp)
+#     return render(request,'provider/history.html',{'newapp':newapp})
 
 
         
