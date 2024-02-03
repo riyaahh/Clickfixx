@@ -13,8 +13,22 @@ class userDetails(models.Model):
 
 
 
+
     def __str__(self):
         return str(self.firstname.__str__())
+    
+# models.py
+
+
+
+class Review(models.Model):
+    author = models.CharField(max_length=100)
+    content = models.TextField()
+    # Add any additional fields you need
+
+    def __str__(self):
+        return self.author
+
     
 # class login(models.Model):
 #     username = models.CharField(max_length=50,unique=True)

@@ -12,6 +12,16 @@ def bookings(request):
     return render(request,"customer/bookings.html",context={})
 def bookform(request):
     return render(request,"customer/bookform.html",context={})
+def reset_form(request):
+    return render(request,"customer/forgot1.html",context={})
+def reset_done(request):
+    return render(request,"customer/forgot2.html",context={})
+def reset_confirm(request):
+    return render(request,"customer/forgot3.html",context={})
+def reset_complete(request):
+    return render(request,"customer/forgot4.html",context={})
+def reviews(request):
+    return render(request,"customer/review.html",context={})
 
 
 # def login(request):

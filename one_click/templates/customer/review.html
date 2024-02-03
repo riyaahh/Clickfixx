@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+<!-- slider stylesheet -->
+<link rel="stylesheet" type="text/css"
+  href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css' %}" />
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+<!-- font awesome style -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+
+
+
+<!-- Custom styles for this template -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet" />
+<!-- responsive style -->
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+<link href="{% static 'js/custom.js' %}" rel="stylesheet" />
+<link rel="stylesheet" href="{% static 'owlcarousel/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'owlcarousel/owl.theme.default.min.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&family=Fasthand&family=Playfair+Display:ital,wght@0,700;1,500&display=swap"
+  rel="stylesheet">
+
+{% endblock styles %}
+
+{% block content %}
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea,
+        select {
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        select {
+            height: 40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+
+
+    <div class="container">
+        <header>
+            <h1>Home Services Reviews</h1>
+        </header>
+
+        <main>
+            <form id="reviewForm">
+                <label for="serviceName">Service Name:</label>
+                <input type="text" id="serviceName" name="serviceName" required>
+
+                <label for="rating">Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="5">5 (Excellent)</option>
+                    <option value="4">4 (Good)</option>
+                    <option value="3">3 (Average)</option>
+                    <option value="2">2 (Poor)</option>
+                    <option value="1">1 (Very Poor)</option>
+                </select>
+
+                <label for="review">Review:</label>
+                <textarea id="review" name="review" rows="4" required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </main>
+    </div>
+    {% endblock %}
+
+
