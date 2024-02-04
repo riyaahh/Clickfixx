@@ -19,6 +19,8 @@ def bookform(request):
         time=request.POST['time'].strip()
         workers=request.POST['id'].strip()
         contact=request.POST.get('no')
+        
+        
         newapp=appointmentdetails(name=name,location=location,service=service,date=date,time=time,workers=workers,phoneno=contact,user_id=request.user)
         newapp.save()
         
@@ -26,8 +28,19 @@ def bookform(request):
     
     return render(request,"customer/bookform.html")
 
+def deleteappointment(request,ID):
+    task = appointmentdetails.objects.get(appid=ID)
+    task.delete()
+    return redirect('history')
 
+# def editappointment(request, ID):
+#     task = appointmentdetails.objects.get(appid=ID)
+    
 
+#     return redirect('bookform')
+   
+
+   
 
 # def login(request):
 

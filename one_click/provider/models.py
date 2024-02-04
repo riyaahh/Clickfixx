@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 
+
 class service(models.Model):
     sid=models.IntegerField(primary_key=True)
     stype=models.CharField(max_length=20)
@@ -28,11 +29,7 @@ class provider(models.Model):
     def __str__(self):
         return str(self.pname.__str__())
 class appointments(models.Model):
-    appid=models.IntegerField(primary_key=True)
-    pid=models.ForeignKey(provider,on_delete=models.CASCADE)
-    sid=models.ForeignKey(service,on_delete=models.CASCADE)
-    cid=models.IntegerField()
-    cpayid=models.IntegerField()
+    appid=models.IntegerField()
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
 

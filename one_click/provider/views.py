@@ -10,8 +10,12 @@ def profform(request):
     return render(request,"provider/profform.html",context={})
 def history(request):
     newapp=appointmentdetails.objects.filter(user_id=request.user)
-    
     return render (request,"provider/history.html",context={'newapp':newapp})
+def pappointments(request):
+    pid=request.user
+    print(pid)
+    newapp=appointmentdetails.objects.filter()
+    return render(request,"provider/pappointments.html",context={'newapp':newapp})
     
 def addproviders(request):
     if request.method=="POST":
