@@ -29,6 +29,9 @@ def signin(request):
     return render(request,"clickadmin/signin.html",context={})
 def signup(request):
     return render(request,"clickadmin/signup.html",context={})
+def user(request):
+    return render(request,"clickadmin/user.html",context={})
+
 
 # def register(request):
 #     return render(request,"customer\\register.html",context={})
