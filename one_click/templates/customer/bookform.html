@@ -111,35 +111,41 @@
       </div>
     </div>
     <div class="col-md-6">
-
-      <form class="col-md-12 p-3" style="size: 20%;">
-        <input type="text" class="form-control" name="name" placeholder="YOUR NAME"><br>
-        <input type="text" class="form-control"  name=id placeholder="ENTER YOUR USER ID"><br>
+      
+      <form  method='POST' class="col-md-12 p-3" style="size: 20%;" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" class="form-control" name="name" value="{{ request.user.first_name }} {{ request.user.last_name }} {{ request.user.username }}" placeholder="YOUR NAME"><br>
+        <input type="text" class="form-control" name="no" placeholder="Contact no"><br>
+        <input type="text" class="form-control"  name="id"  placeholder="No of workers"><br>
         <label for="exampleFormControlTextarea1" class="form-label"></label>
         <textarea class="form-control" id="exampleFormControlTextarea1" name="location" rows="3"
           placeholder="enter your location"></textarea><br> <BR>
         <select class="form-select form-select-sm" aria-label="Large select" name="service">
           <option selected="">SELECT YOUR SERVICE</option>
-          <option value="1">MAINTENANCE</option>
-          <option value="2">PLUMBING</option>
-          <option value="3">ELECTRICAL</option>
-          <option value="4">PEST CONTROL</option>
-          <option value="5">LAUNDRY</option>
+          <option value="maintainance">MAINTENANCE</option>
+          <option value="plumbing">PLUMBING</option>
+          <option value="electrical">ELECTRICAL</option>
+          <option value="pestcontrol">PEST CONTROL</option>
+          <option value="laundry">LAUNDRY</option>
         </select>
 
         <br><br>
 
 
-        <label for="date" name="dats">
+        <label for="date" name="date">
           <p style="color: black;">CHOOSE YOUR DATE</p>
         </label>
-        <input type="time" id="time" name="time" class="form-control"><br><br>
+        <input type="date" id="date" name="time" class="form-control"><br><br>
         <label for="time">
           <P style="color: black;"> CHOOSE THE TIME</P>
         </label>
         <input type="time" id="time" name="time" class="form-control">
 
-        <button type="submit"><a href="{% url 'dashboard' %}">Submit</a></button>
+        <button type="submit">
+          <a href="{% url 'history' %}">
+            Submit
+          </a>
+        </button>
       </form>
     
     <div id="datetime"></div>

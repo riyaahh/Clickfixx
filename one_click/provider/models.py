@@ -1,4 +1,5 @@
 from django.db import models
+import uuid
 
 class service(models.Model):
     sid=models.IntegerField(primary_key=True)
@@ -21,6 +22,8 @@ class provider(models.Model):
     peducation=models.CharField(max_length=40)
     pDOB=models.DateField()
     pimage=models.ImageField(upload_to='profileimages/')
+    password=models.IntegerField(default=1234)
+    
     
     def __str__(self):
         return str(self.pname.__str__())

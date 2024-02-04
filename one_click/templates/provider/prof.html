@@ -42,22 +42,22 @@
                     <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
                         <div class="row align-items-center">
                             <div class="col-lg-6 mb-4 mb-lg-0">
-                                <img src="{{prov.image.url}}" alt="...">
+                                <img src="{{request.user.provider.pimage.url}}" alt="...">
                             </div>
                             <div class="col-lg-6 px-xl-10">
                                 <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
-                                    <h3 class="h2 text-white mb-0">{{request.provider.first_name}}</h3>
+                                    <h3 class="h2 text-white mb-0">{{request.provider.pname}}</h3>
                                     <span class="text-primary">Provider</span>
                                 </div>
                                 <ul class="list-unstyled mb-1-9">
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Name:</span> </li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email</span> </li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">service:</span> </li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Experience::</span> </li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Dob:</span> </li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Education:</span> </li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Name:</span>{{request.provider.pname}} </li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email</span>{{request.provider.pemail}} </li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">service:</span>{{request.provider.pservicetype}} </li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Experience::</span>{{request.provider.exp}}</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Dob:</span>{{request.provider.pDOB}}</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Education:</span>{{request.provider.peducation}} </li>
 
-                                    <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone:</span> 9074569684</li>
+                                    <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone:</span>{{request.provider.pcontactno}}</li>
 
                                 </ul>
                                 <a href="{% url 'profform' %}" > UPDATE YOUR PROFILE</a>
@@ -69,7 +69,7 @@
             </div>
             <div class="col-lg-12 mb-4 mb-sm-5">
                 <div>
-                    <span class="section-title text-primary mb-3 mb-sm-4">About Me</span>
+                    <span class="section-title text-primary mb-3 mb-sm-4">{{request.provider.exp}} {{Request.provider.peducation}}</span>
                     <p>Welcome to our Home Services App, your go-to solution for simplifying and streamlining your everyday tasks and chores. Life can be hectic, and our goal is to make things easier for you by connecting you with trusted professionals who can take care of various home-related services. 
                         Whether you need a plumber, electrician, cleaner, or any other service provider, 
                         our app is designed to bring convenience to your fingertips.</p>
@@ -83,7 +83,7 @@
                             <span class="section-title text-primary mb-3 mb-sm-4">Skill</span>
                             <div class="progress-text">
                                 <div class="row">
-                                    <div class="col-6">Driving range</div>
+                                    <div class="col-6">PLUMBING</div>
                                     <div class="col-6 text-end">80%</div>
                                 </div>
                             </div>
@@ -92,7 +92,7 @@
                             </div>
                             <div class="progress-text">
                                 <div class="row">
-                                    <div class="col-6">Short Game</div>
+                                    <div class="col-6">ELECTRICAL</div>
                                     <div class="col-6 text-end">90%</div>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
                             </div>
                             <div class="progress-text">
                                 <div class="row">
-                                    <div class="col-6">Side Bets</div>
+                                    <div class="col-6">PEST CONTROL</div>
                                     <div class="col-6 text-end">50%</div>
                                 </div>
                             </div>
@@ -110,7 +110,16 @@
                             </div>
                             <div class="progress-text">
                                 <div class="row">
-                                    <div class="col-6">Putting</div>
+                                    <div class="col-6">LAUNDRY</div>
+                                    <div class="col-6 text-end">60%</div>
+                                </div>
+                            </div>
+                            <div class="custom-progress progress progress-medium" style="height: 4px;">
+                                <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
+                            </div>
+                            <div class="progress-text">
+                                <div class="row">
+                                    <div class="col-6">MAINTAINNACE</div>
                                     <div class="col-6 text-end">60%</div>
                                 </div>
                             </div>
@@ -118,12 +127,12 @@
                                 <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
                             </div>
                         </div>
-                        <div>
+                        <!-- <div>
                             <span class="section-title text-primary mb-3 mb-sm-4">Education</span>
                             <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</p>
                             <p class="mb-1-9">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
               
-                        </div>
+                        </div> -->
                         <div>
                             <a href="{% url 'history' %}"> click to see available apointments</a>
                             <!-- <button type="button" class="btn btn-secondary btn-lg" href="{% url 'history' %}">See service availability</button> -->

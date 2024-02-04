@@ -1,1 +1,40 @@
 db.sqlite3
+
+media/profileimages/
+
+clickadmin/__pycache__/
+          clickadmin/__pycache__/
+          clickadmin/__pycache__/
+           clickadmin/__pycache__/
+           clickadmin/__pycache__/
+           clickadmin/__pycache__/
+         clickadmin/migrations/
+         customer/__pycache__/_
+          customer/__pycache__/
+          customer/__pycache__/
+          customer/__pycache__/
+           customer/__pycache__/
+           customer/__pycache__/
+           customer/migrations/__pycache__/
+          customer/migrations/__pycache__/
+       customer/migrations/__pycache__/
+           customer/migrations/__pycache__/
+          customer/migrations/__pycache__/
+           customer/migrations/__pycache__/
+           customer/migrations/__pycache__/
+           customer/migrations/__pycache__/
+       
+          one_click/__pycache__/_
+           one_click/__pycache__/
+          one_click/__pycache__/
+           one_click/__pycache__/
+       
+          provider/__pycache__/
+          provider/__pycache__/
+           provider/__pycache__/
+           provider/__pycache__/
+           provider/__pycache__/
+           provider/__pycache__/
+          provider/migrations/__pycache__/
+          provider/migrations/__pycache__/
+          provider/migrations/__pycache__/
