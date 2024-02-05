@@ -47,7 +47,7 @@
         <!-- Sidebar Start -->
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
-                <a href="{% static 'clickadmin/indexadm.html' %}" class="navbar-brand mx-4 mb-3">
+                <a href="{% static 'indexadm.html' %}" class="navbar-brand mx-4 mb-3">
                     <h3 class="text-primary">Easy Fix</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
@@ -59,22 +59,22 @@
                         <span></span>
                     </div>
                 </div>
-                <a href="{% static 'clickadmin/indexadm.html' %}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                <a href="{% static 'indexadm.html' %}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="{% static 'clickadmin/user.html' %}" class="nav-item nav-link active"><i class="fa fa-user me-2"></i>Users</a>
+                        <a href="{% static 'user.html' %}" class="nav-item nav-link active"><i class="fa fa-user me-2"></i>Users</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             
                         </div>
                     </div>
-                    <a href="{% static 'clickadmin/widget.html' %}" class="nav-item nav-link"><i class="fa fa-tasks me-2"></i>Tasks</a>
-                    <a href="{% static 'clickadmin/form.html' %}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Transactions</a>
-                    <a href="{% static 'clickadmin/table.html' %}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Reviews</a>
-                    <a href="{% static 'clickadmin/chart.html' %}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Analytics</a>
+                    <a href="{% static 'widget.html' %}" class="nav-item nav-link"><i class="fa fa-tasks me-2"></i>Tasks</a>
+                    <a href="{% static 'form.html' %}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Transactions</a>
+                    <a href="{% static 'table.html' %}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Reviews</a>
+                    <a href="{% static 'chart.html' %}" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Analytics</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="{% static 'clickadmin/signin.html' %}" class="dropdown-item">Sign In</a>
-                            <a href="{% static 'clickadmin/signup.html' %}" class="dropdown-item">Sign Up</a>
+                            <a href="{% static 'signin.html' %}" class="dropdown-item">Sign In</a>
+                            <a href="{% static 'signup.html' %}" class="dropdown-item">Sign Up</a>
                             
                         </div>
                     </div>
@@ -88,7 +88,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="{% static 'clickadmin/indexadm.html' %}" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="{% static 'indexadm.html' %}" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
@@ -185,16 +185,27 @@
                             <thead>
                                 <tr class="text-white">
                                     <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">USER ID</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email id</th>
-                                    <th scope="col">Role</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">USER</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">phone number</th>
+                                    <th scope="col">gender</th>
+                                    <th scope="col">mail</th>
+                                    <th scope="col">last name</th>
+                                    <th scope="col">userid</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                
+                                {% for auth_user in auth_users %}
+                                <tr>
+                                    <td>{{ auth_user.userid }}</td>
+                                    <td>{{ auth_user.firstname }}</td>
+                                    <td>{{ auth_user.phone_number }}</td>
+                                    <td>{{ auth_user.gender }}</td>
+                                    <td>{{ auth_user.mail }}</td>
+                                    <td>{{ auth_user.lastname }}</td>
+                                    <td>{{ auth_user.userid }}</td>
+                                </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>

@@ -1,5 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+
+from customer.models import Review
+from django.contrib import admin
 
 
 
@@ -15,6 +19,7 @@ def contact(request):
     return render(request,"clickadmin/contact.html",context={})
 def service(request):
     return render(request,"clickadmin/service.html",context={})
+
 def chart(request):
     return render(request,"clickadmin/chart.html",context={})
 def form(request):
