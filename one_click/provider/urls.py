@@ -7,5 +7,6 @@ urlpatterns = [
       
       path('prof',views.prof,name="prof"),
       path('profform',views.profform,name="profform"),
-      path('history',views.history,name="history")
+      path('history',views.history,name="history"),
+      path('pappointments',views.pappointments,name='pappointments')
 ]

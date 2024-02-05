@@ -16,7 +16,6 @@ def contact(request):
     return render(request,"clickadmin/contact.html",context={})
 def service(request):
     return render(request,"clickadmin/service.html",context={})
-
 def chart(request):
     return render(request,"clickadmin/chart.html",context={})
 def form(request):

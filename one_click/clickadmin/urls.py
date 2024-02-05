@@ -1,13 +1,14 @@
 from django.urls import path,include
-
 from clickadmin import views
 from clickadmin.views import index,about,contact,service
-
 from .import views
 from . views import index,about,contact,service
 from customer.views import signin
 from django.contrib import admin
 from django.urls import path
+
+
+
 
 
 

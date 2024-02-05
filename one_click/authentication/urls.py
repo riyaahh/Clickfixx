@@ -1,15 +1,12 @@
-from django.urls import path
-from . import views
-
-
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-
- path('indexadm/',views.indexadm , name= "indexadm"),
- path('signup/',views.signup , name= "signup"),
- path('signin/',views.signin , name="signin"),
- path('signout/',views.signout, name"signout"),
-
-
+   
+    path('clickadmin/', admin.site.urls),
+    path('clickadmin', include('clickadmin.urls')),
 
 ]
+
