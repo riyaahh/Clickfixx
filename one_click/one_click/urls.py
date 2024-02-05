@@ -21,8 +21,13 @@ from one_click import settings
 
 
 urlpatterns = [
+<<<<<<< HEAD
     path('clickadmin/', admin.site.urls),
     path('clickadmin/',include('clickadmin.urls')),
+=======
+    path('',include('clickadmin.urls')),
+    path('admin/', admin.site.urls),
+>>>>>>> ae04a11334136909f11bf0bf1fd9c13aece45354
     path('customer/', include('customer.urls')),
     path('provider/',include('provider.urls')),
    

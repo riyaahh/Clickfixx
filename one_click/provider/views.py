@@ -3,27 +3,45 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
 from customer.models import userDetails,appointmentdetails
-from provider.models import editprovider
+from provider.models import provider
 
 def prof(request):
     return render(request,"provider/prof.html",context={})
-def profform(request):
-     if request.method=="POST":
-          print(' hfjrm')
-          name = request.POST['name'].strip()
-          mailid=request.POST['email'].strip()
-          service=request.POST['service'].strip()
-          phone=request.POST['phone'].strip()
-          experience=request.POST['experience'].strip()
-          education=request.POST['education'].strip()
-          dob=request.POST['dob'].strip()
-          image=request.FILES.get('image')
+def profform(request,id):
+          object=provider.objects.get(pid=id)
+          if request.POST:
+                newname=request.POST['name']
+                newmailid=request.POST['email']
+                newphone=request.POST['phone']
+                newexperience=request.POST['experience']
+                neweducation=request.POST['education']
+                newdob=request.POST['dob']
+                newimage=request.FILES.get('image')
+                object.pname=newname
+                object.pemail=newmailid
+                object.exp=newexperience
+                object.peducation=neweducation
+                object.pDOB=newdob
+                object.pimage=newimage
+                object.pcontactno=newphone
+                object.save()
+                return redirect('prof')
+          return render(request,"provider/profform.html",context={})
+               
+    #  if request.method=="POST":
+    #       name = request.POST['name'].strip()
+    #       mailid=request.POST['email'].strip()
+    #       service=request.POST['service'].strip()
+    #       phone=request.POST['phone'].strip()
+    #       experience=request.POST['experience'].strip()
+    #       education=request.POST['education'].strip()
+    #       dob=request.POST['dob'].strip()
+    #       image=request.FILES.get('image')
 
-          newprov=User.editprovider(name=name,mailid=mailid,service=service,phone=phone,experience=experience,education=education,image=image,dob=dob)
-          newprov.save()
+    #       newprov=editprovider(name=name,mailid=mailid,service=service,phone=phone,experience=experience,education=education,image=image,dob=dob)
+    #       newprov.save()
 
-          return redirect('prof')
-     return render(request,"provider/profform.html",context={})
+          
 
 def history(request):
     newapp=appointmentdetails.objects.filter(user_id=request.user)
@@ -42,6 +60,7 @@ def pappointments(request):
 #         gender = request.POST['Gender'].strip()
 #         password = request.POST['password'].strip()
 #         phonenumber=request.POST['phoneNo'].strip()
+        
         
         
 

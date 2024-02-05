@@ -48,16 +48,3 @@ class providerpaymentdetails(models.Model):
 
     def __str__(self):
         return str({self.payid.__str__()}) + "-" + str({self.pid.__str__()})
-
-class editprovider(models.Model):
-    name=models.CharField(max_length=20)
-    mailid=models.CharField(max_length=30)
-    service=models.CharField(max_length=20)
-    phone=models.IntegerField()
-    experience=models.CharField(max_length=50)
-    education=models.CharField(max_length=50)
-    dob=models.DateField()
-    image=models.ImageField(upload_to='profileimages/')
-
-    def __str__(self):
-        return str(self.name.__str__())

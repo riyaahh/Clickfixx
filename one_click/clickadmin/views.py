@@ -4,12 +4,11 @@ from django.http import HttpResponse
 
 
 
-
-
-
-
+@login_required(login_url='login')
 def index(request):
-    return render(request,"clickadmin/index.html")
+    reviews=Review.objects.filter(user_id=request.user)
+    return render(request,"clickadmin/index.html",{'reviews':reviews})
+
 def about(request):
     return render(request,"clickadmin/about.html")
 def contact(request):

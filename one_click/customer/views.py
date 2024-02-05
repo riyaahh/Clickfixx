@@ -3,13 +3,44 @@ from django.http import HttpResponse
 
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.models import User
-from .models import userDetails ,appointmentdetails
+from .models import userDetails ,appointmentdetails,Review
 
 
 def UserData(request):
     return render(request,"customer/UserData.html",context={})
 def bookings(request):
     return render(request,"customer/bookings.html")
+def bookform(request):
+    return render(request,"customer/bookform.html",context={})
+def reset_form(request):
+    return render(request,"customer/forgot1.html",context={})
+# def reset_done(request):
+#     return render(request,"customer/forgot2.html",context={})
+def reset_confirm(request):
+    return render(request,"customer/forgot3.html",context={})
+# def reset_complete(request):
+#     return render(request,"customer/forgot4.html",context={})
+def reviews(request):
+    if request.method=="POST":
+        
+        service_name = request.POST.get('serviceName')
+        rating = request.POST.get('rating')
+        review_text = request.POST.get('review')
+        # user_id = request.POST['userid']
+
+      
+        review = Review.objects.create(
+            service_name=service_name,
+            rating=rating,
+            review_text=review_text,
+            user_id=request.user)
+        
+        review.save()
+        return redirect('dashboard')
+
+    else:
+        return render(request,"customer/review.html",context={})
+    
 def bookform(request):
     if request.method=="POST":
         name=request.POST['name'].strip()
@@ -33,14 +64,12 @@ def deleteappointment(request,ID):
     task.delete()
     return redirect('history')
 
-# def editappointment(request, ID):
-#     task = appointmentdetails.objects.get(appid=ID)
-    
 
 #     return redirect('bookform')
    
 
    
+
 
 # def login(request):
 

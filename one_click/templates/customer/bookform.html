@@ -115,7 +115,7 @@
       <form  method='POST' class="col-md-12 p-3" style="size: 20%;" enctype="multipart/form-data">
         {% csrf_token %}
         <!-- <input type="text" class="form-control" name="name"  placeholder="id"><br> -->
-        <input type="text" class="form-control" name="name" value="{{ request.user.first_name }} " placeholder=" name" required><br>
+        <input type="text" class="form-control" name="name" value="{{ request.user.first_name }} " placeholder="second name" required><br>
 
         <input type="text" class="form-control" name="no" placeholder="Contact no" required><br>
         <input type="text" class="form-control"  name="id"  placeholder="No of workers" required><br>
