@@ -42,25 +42,32 @@
                     <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
                         <div class="row align-items-center">
                             <div class="col-lg-6 mb-4 mb-lg-0">
-                                <img src="{{request.user.provider.pimage.url}}" alt="...">
+                                {% for item in pro %}
+                                {% if item.pname == user.first_name %}
+                                <img src="{{item.pimage.url}}" alt="..." style="height: 10cm ; width: 10cm;" >
+
                             </div>
                             <div class="col-lg-6 px-xl-10">
                                 <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
                                     <h3 class="h2 text-white mb-0">{{request.user.first_name}} {{request.user.last_name}}</h3>
                                     <span class="text-primary">Provider</span>
                                 </div>
+                               
+                                
                                 <ul class="list-unstyled mb-1-9">
                                     <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Name:</span>{{request.user.first_name}} </li>
                                     <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Email</span>{{request.user.last_name}} </li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">service:</span>{{request.provider.pservicetype}} </li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Experience::</span>{{request.provider.exp}}</li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Dob:</span>{{request.provider.pDOB}}</li>
-                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Education:</span>{{request.provider.peducation}} </li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">service:</span>{{item.pservicetype}} </li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Experience::</span>{{item.exp}}</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Dob:</span>{{item.pDOB}}</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Education:</span>{{item.peducation}} </li>
 
-                                    <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone:</span>{{request.provider.pcontactno}}</li>
+                                    <li class="display-28"><span class="display-26 text-secondary me-2 font-weight-600">Phone:</span>{{item.pcontactno}}</li>
 
                                 </ul>
-                                <a href="{% url 'profform' %}" > UPDATE YOUR PROFILE</a>
+                                {% endif %}
+                                {% endfor %}
+                                <!-- <a href="{% url 'profform'  %}" > UPDATE YOUR PROFILE</a> -->
                                 
                             </div>
                         </div>

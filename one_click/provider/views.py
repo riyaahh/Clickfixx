@@ -6,10 +6,11 @@ from customer.models import userDetails,appointmentdetails
 from provider.models import provider
 
 def prof(request):
-    return render(request,"provider/prof.html",context={})
+    pro=provider.objects.all()
+    return render(request,"provider/prof.html",context={'pro':pro})
 def profform(request,id):
-          object=provider.objects.get(pid=id)
-          if request.POST:
+    object=provider.objects.get(pid=id)
+    if request.POST:
                 newname=request.POST['name']
                 newmailid=request.POST['email']
                 newphone=request.POST['phone']
@@ -26,7 +27,7 @@ def profform(request,id):
                 object.pcontactno=newphone
                 object.save()
                 return redirect('prof')
-          return render(request,"provider/profform.html",context={})
+    return render(request,"provider/profform.html")
                
     #  if request.method=="POST":
     #       name = request.POST['name'].strip()
