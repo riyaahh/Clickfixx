@@ -2,14 +2,16 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
-from customer.models import userDetails
+from customer.models import userDetails,appointmentdetails
 
 def prof(request):
     return render(request,"provider/prof.html",context={})
 def profform(request):
     return render(request,"provider/profform.html",context={})
 def history(request):
-    return render (request,"provider/history.html",context={})
+    newapp=appointmentdetails.objects.filter(user_id=request.user)
+    
+    return render (request,"provider/history.html",context={'newapp':newapp})
     
 def addproviders(request):
     if request.method=="POST":

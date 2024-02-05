@@ -40,7 +40,18 @@ INSTALLED_APPS = [
     'customer',
     'provider',
     'clickadmin',
+    
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+LOGIN_REDIRECT_URL = 'indexadm/'
+
+
+LOGOUT_REDIRECT_URL = 'signin/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,6 +136,7 @@ STATICFILES_DIRS=[
 ]
 MEDIA_URL='media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = BASE_DIR / "sent_emails"
 
