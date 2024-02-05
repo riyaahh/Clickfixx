@@ -33,16 +33,7 @@ def deleteappointment(request,ID):
     task.delete()
     return redirect('history')
 
-# def editappointment(request, ID):
-#     task = appointmentdetails.objects.get(appid=ID)
-    
 
-#     return redirect('bookform')
-   
-
-   
-
-# def login(request):
 
 def signin(request):
 
