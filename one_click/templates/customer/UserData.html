@@ -1,4 +1,4 @@
-    {% extends 'base.html' %}
+{% extends 'base.html' %}
     {% load static %}
     {% block styles %}
 
@@ -51,7 +51,7 @@
                                     <h3 class="h2 text-white mb-0">{{request.user.first_name}} {{request.user.last_name}}</h3>
                                     <span class="text-primary">Customer</span>
 
-    <!--  -->
+
                                     </div>
                                     <ul class="list-unstyled mb-1-9">
                                         <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">First Name:</span> {{request.user.first_name}}</li>
@@ -135,6 +135,13 @@
                                     <div class="animated custom-bar progress-bar slideInLeft bg-secondary" style="width:60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="70" role="progressbar"></div>
                                 </div>
                             </div>
+                            <div>
+                                <a href="{% url 'reviews' %}"> <input class="btn btn-primary" type="submit" value="Reviews"></a>
+                            </div>
+                            <ur>
+                            <ur>
+
+                         
                             
                         <div>
                            

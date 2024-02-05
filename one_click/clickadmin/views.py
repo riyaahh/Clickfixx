@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from customer.models import Review
+from django.contrib.auth.decorators import login_required
 
 
 
 
-
-
+@login_required(login_url='login')
 def index(request):
-    return render(request,"clickadmin/index.html")
+    reviews=Review.objects.filter(user_id=request.user)
+    return render(request,"clickadmin/index.html",{'reviews':reviews})
+
 def about(request):
     return render(request,"clickadmin/about.html")
 def contact(request):

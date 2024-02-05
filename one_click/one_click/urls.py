@@ -21,9 +21,9 @@ from one_click import settings
 
 
 urlpatterns = [
+    path('',include('clickadmin.urls')),
     path('admin/', admin.site.urls),
     path('customer/', include('customer.urls')),
-    path('',include('clickadmin.urls')),
     path('provider/',include('provider.urls')),
    
 ]
