@@ -41,13 +41,14 @@ rel="stylesheet">
   {% csrf_token %}
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">Appid</th>
         <th scope="col">Service</th>
         <th scope="col">No of workers</th>
         <th scope="col">DATE /TIME</th>
         <th scope="col">location</th>
         <th scope="col">Contact No</th>
-        <th scope="col">Action</th>
+        <th scope="col">Status</th>
+        
 
       </tr>
     </thead>
@@ -56,19 +57,16 @@ rel="stylesheet">
       {% for new in newapp %}
       <tr>
         <th scope="row">{{new.appid}}</th>
-        <td>{{new.service}}</td>
+        <th scope="row">{{new.service}}</th>
         <td>{{new.workers}}</td>
         <td>{{new.date}} {{new.time}}</td>
         <td>{{new.location}}</td>
         <td>{{new.phoneno}}</td>
         <td>
           
-          <a href="{%  url 'deleteappointment' ID=new.appid %}">
-            <i class="fa-solid fa-trash-can float-end m-1 text-danger;"></i>
-          </a>
+         
          
 
-        </td>
       </tr>
       {% endfor %}
     </tbody>
@@ -79,3 +77,4 @@ rel="stylesheet">
 	crossorigin="anonymous"></script>
 
 {% endblock content %}
+

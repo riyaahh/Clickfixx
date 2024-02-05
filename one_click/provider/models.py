@@ -1,6 +1,7 @@
 from django.db import models
 import uuid
 
+
 class service(models.Model):
     sid=models.IntegerField(primary_key=True)
     stype=models.CharField(max_length=20)
@@ -28,11 +29,7 @@ class provider(models.Model):
     def __str__(self):
         return str(self.pname.__str__())
 class appointments(models.Model):
-    appid=models.IntegerField(primary_key=True)
-    pid=models.ForeignKey(provider,on_delete=models.CASCADE)
-    sid=models.ForeignKey(service,on_delete=models.CASCADE)
-    cid=models.IntegerField()
-    cpayid=models.IntegerField()
+    # appid=models.IntegerField()
     created_at=models.DateTimeField(auto_now_add=True)
     updated_at=models.DateTimeField(auto_now=True)
 
@@ -51,4 +48,16 @@ class providerpaymentdetails(models.Model):
 
     def __str__(self):
         return str({self.payid.__str__()}) + "-" + str({self.pid.__str__()})
-    
+
+class editprovider(models.Model):
+    name=models.CharField(max_length=20)
+    mailid=models.CharField(max_length=30)
+    service=models.CharField(max_length=20)
+    phone=models.IntegerField()
+    experience=models.CharField(max_length=50)
+    education=models.CharField(max_length=50)
+    dob=models.DateField()
+    image=models.ImageField(upload_to='profileimages/')
+
+    def __str__(self):
+        return str(self.name.__str__())

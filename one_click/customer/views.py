@@ -26,15 +26,15 @@ def reviews(request):
         service_name = request.POST.get('serviceName')
         rating = request.POST.get('rating')
         review_text = request.POST.get('review')
-        user_id = request.POST['userid']
+        # user_id = request.POST['userid']
 
       
         review = Review.objects.create(
             service_name=service_name,
             rating=rating,
             review_text=review_text,
-            user_id=User.objects.get(id=user_id)
-        )
+            user_id=request.user)
+        
         review.save()
         return redirect('dashboard')
 
@@ -50,6 +50,8 @@ def bookform(request):
         time=request.POST['time'].strip()
         workers=request.POST['id'].strip()
         contact=request.POST.get('no')
+        
+        
         newapp=appointmentdetails(name=name,location=location,service=service,date=date,time=time,workers=workers,phoneno=contact,user_id=request.user)
         newapp.save()
         
@@ -57,8 +59,19 @@ def bookform(request):
     
     return render(request,"customer/bookform.html")
 
+def deleteappointment(request,ID):
+    task = appointmentdetails.objects.get(appid=ID)
+    task.delete()
+    return redirect('history')
 
+# def editappointment(request, ID):
+#     task = appointmentdetails.objects.get(appid=ID)
+    
 
+#     return redirect('bookform')
+   
+
+   
 
 
 # def login(request):
