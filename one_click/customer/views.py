@@ -3,7 +3,7 @@ from django.http import HttpResponse
 
 from django.contrib.auth import authenticate,login
 from django.contrib.auth.models import User
-from .models import userDetails ,appointmentdetails
+from .models import userDetails ,appointmentdetails,Review
 
 
 def UserData(request):
@@ -11,7 +11,6 @@ def UserData(request):
 def bookings(request):
     return render(request,"customer/bookings.html")
 def bookform(request):
-
     return render(request,"customer/bookform.html",context={})
 def reset_form(request):
     return render(request,"customer/forgot1.html",context={})
@@ -22,8 +21,27 @@ def reset_confirm(request):
 # def reset_complete(request):
 #     return render(request,"customer/forgot4.html",context={})
 def reviews(request):
-    return render(request,"customer/review.html",context={})
+    if request.method=="POST":
+        
+        service_name = request.POST.get('serviceName')
+        rating = request.POST.get('rating')
+        review_text = request.POST.get('review')
+        user_id = request.POST['userid']
 
+      
+        review = Review.objects.create(
+            service_name=service_name,
+            rating=rating,
+            review_text=review_text,
+            user_id=User.objects.get(id=user_id)
+        )
+        review.save()
+        return redirect('dashboard')
+
+    else:
+        return render(request,"customer/review.html",context={})
+    
+def bookform(request):
     if request.method=="POST":
         name=request.POST['name'].strip()
         location=request.POST['location'].strip()

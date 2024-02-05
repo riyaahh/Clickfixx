@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from customer.models import Review
 
 
 
@@ -7,7 +8,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return render(request,"clickadmin/index.html")
+    reviews=Review.objects.filter(user_id=request.user)
+    return render(request,"clickadmin/index.html",{'reviews':reviews})
 def about(request):
     return render(request,"clickadmin/about.html")
 def contact(request):

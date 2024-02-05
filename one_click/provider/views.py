@@ -23,6 +23,7 @@ def addproviders(request):
         phonenumber=request.POST['phoneNo'].strip()
         
         
+        
 
         new_user=User.objects.create_user(first_name=firstname,last_name=lastname,email=email,username=email,password=password,is_active=True)
         new_user.save()

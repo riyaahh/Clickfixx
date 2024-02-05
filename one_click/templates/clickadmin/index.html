@@ -385,15 +385,11 @@
                 <i class="fa fa-quote-left" aria-hidden="true"></i>
               </div>
             </div>
+            {% for i in Review.objects %}
             <div class="client_text">
-              <p>
-                "Exceptional Service!"
-                "I've been using [Your App Name] for various home services, and I'm continually impressed. The
-                professionals are skilled, punctual, and the app makes scheduling a breeze. A game-changer for anyone
-                who values their time and home."
-
-              </p>
+                <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">serviceName</span> {{i.service_name}}</li>
             </div>
+            {% endfor %}
           </div>
         </div>
         <div class="item">

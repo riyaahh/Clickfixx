@@ -26,19 +26,31 @@ class appointmentdetails(models.Model):
 
     def __str__(self):
 
-        return str(self.firstname.__str__())
+        return str(self.name.__str__())
     
 # models.py
 
 
+class Review(models.Model):
+    SERVICE_CHOICES = [
+        (5, 'Excellent'),
+        (4, 'Good'),
+        (3, 'Average'),
+        (2, 'Poor'),
+        (1, 'Very Poor'),
+    ]
+    user_id=models.ForeignKey(User,on_delete=models.CASCADE)
+    service_name = models.CharField(max_length=255,default="Plumbing")
+    rating = models.PositiveIntegerField(choices=SERVICE_CHOICES,default=2)
+    review_text = models.TextField(null=True)
 
-# class Review(models.Model):
-#     author = models.CharField(max_length=100)
-#     content = models.TextField()
-#     # Add any additional fields you need
+    
 
-#     def __str__(self):
-#         return self.author
+    def __str__(self):
+        return f"{self.service_name} - {self.rating}"
+
+
+   
 
     
 
