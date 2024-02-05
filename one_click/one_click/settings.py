@@ -40,7 +40,19 @@ INSTALLED_APPS = [
     'customer',
     'provider',
     'clickadmin',
+    'authentication',
+    
 ]
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+
+LOGIN_REDIRECT_URL = 'indexadm/'
+
+
+LOGOUT_REDIRECT_URL = 'signin/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
