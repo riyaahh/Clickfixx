@@ -6,6 +6,8 @@ from django.http import HttpResponse
 
 
 
+
+
 def index(request):
     return render(request,"clickadmin/index.html")
 def about(request):
