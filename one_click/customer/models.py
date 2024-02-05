@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 import uuid
 class userDetails(models.Model):
-    user=models.OneToOneField(User,primary_key='True',on_delete=models.CASCADE)
+    user = models.OneToOneField(User, primary_key=True, on_delete=models.CASCADE)
     # firstname=models.CharField(max_length=30,default='DefaultFirstName')
     phone_number = models.IntegerField()
     gender = models.CharField(max_length=10, choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')],default='DefaultGender')
@@ -10,6 +10,7 @@ class userDetails(models.Model):
     # lastname=models.CharField(max_length=30,default='DefaultLastName')
     images=models.ImageField(upload_to='ProfileImages/')
     # userid=models.CharField(primary_key=True, max_length=30)
+    is_admin = models.BooleanField(default=False)
 
     
 class appointmentdetails(models.Model):

@@ -74,31 +74,30 @@ def deleteappointment(request,ID):
 # def login(request):
 
 def signin(request):
-
     if request.method == "POST":
-        email=request.POST.get('email')
-        pasword=request.POST.get('password')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
 
-        user=authenticate(request, username=email,password=pasword)
+        user = authenticate(request, username=email, password=password)
         if user is not None:
-            
-            if user.is_superuser:
-                login(request,user)
-                request.session['admin_id']=user.id
-                return redirect("Admin User")
+            if user.is_superuser or user.userdetails.is_admin:
+                login(request, user)
+                request.session['admin_id'] = user.id
+                return redirect("adminindex")  # Redirect to the admin dashboard
             elif user.is_staff:
-                login(request,user)
-                request.session['admin_id']=user.id
+                login(request, user)
+                request.session['admin_id'] = user.id
                 return redirect("prof")
             else:
-                login(request,user)
-                request.session['admin_id']=user.id
+                login(request, user)
+                request.session['admin_id'] = user.id
                 return redirect("user")
         else:
-            msg='invalid details'
-            return render(request,'customer\login.html',{'msg':msg})
+            msg = 'Invalid details'
+            return render(request, 'customer\login.html', {'msg': msg})
     else:
-            return render(request,'customer\login.html')
+        return render(request, 'customer\login.html')
+
     
 
 
@@ -148,6 +147,9 @@ def register(request):
 
 def adduser(request):       
     return render(request,'customer\\UserData.html')
+
+def adminindex(request):       
+    return render(request,'clickadmin/indexadm.html')
 
 # def addappointments(request):
 #     newapp=appointmentdetails.objects.all()

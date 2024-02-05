@@ -10,6 +10,8 @@ urlpatterns = [
     path('bookings',views.bookings,name="bookings"),
     path('bookform',views.bookform,name="bookform"),
     path('adduser',views.adduser,name="adduser"),
+    path('adminindex',views.adminindex,name="adminindex"),
+
 
 
     path('reset_form',views.reset_form,name="reset_form"),

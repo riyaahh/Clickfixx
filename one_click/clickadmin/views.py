@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 
-from customer.models import Review
+from customer.models import *
 from django.contrib import admin
 
 
@@ -47,3 +47,10 @@ def user(request):
 
 # Create your views here.
 
+from django.shortcuts import get_object_or_404
+
+def set_admin(request, user_id):
+    user_detail = get_object_or_404(userDetails, user_id=user_id)
+    user_detail.is_admin = True
+    user_detail.save()
+    return redirect('dashboard')  # Redirect to the admin dashboard or your desired URL
